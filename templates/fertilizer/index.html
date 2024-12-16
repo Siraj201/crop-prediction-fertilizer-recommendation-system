@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+<div>
+    {% if x %}
+        <div class="alert alert-primary d-flex justify-content-center" role="alert">
+            <p class="m-0 fw-bold fs-3">{{ x }}</p>
+        </div>
+    {% endif %}
+
+</div>
+
+<div class="container shadow mt-4 d-flex align-items-center" style="height: 100vh;">
+
+    <form class="px-3" style="background: #ffffff85;" action="fertilizer-predict" method="post">
+        <div class="d-flex justify-content-center pt-5">
+            <h4 class="fw-bold">Fertilizer Recommendation System</h4>
+        </div>
+        <div class="row  px-2 py-5">
+
+            <div class="col-4">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="temp" min="0" max="100" name="temp"
+                        placeholder="Temperature">
+                    <label for="temp">Temperature</label>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="humid" min="0" max="100" , name="humid"
+                        placeholder="Humidity">
+                    <label for="humid">Humidity</label>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="mois" min="0" max="100" , name="mois"
+                        placeholder="Moisture">
+                    <label for="Moisture">Moisture</label>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+                <div class="form-floating">
+                    <select class="form-select" name="soil" id="floatingSelectSoilType" aria-label="Soil type">
+                        <option selected>Select soil type</option>
+                        <option value=0>Black</option>
+                        <option value=1>Clayey</option>
+                        <option value=2>Loamy</option>
+                        <option value=3>Red</option>
+                        <option value=4>Sandy</option>
+                    </select>
+                    <label for="floatingSelectSoilType">Soil type</label>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+                <div class="form-floating">
+                    <select class="form-select" name="crop" id="floatingSelectCropType" aria-label="Crop type">
+                        <option selected>Select crop type</option>
+                        <option value=0>Barley</option>
+                        <option value=1>Cotton</option>
+                        <option value=2>Ground Nuts</option>
+                        <option value=3>Maize</option>
+                        <option value=4>Millets</option>
+                        <option value=5>Oil Seeds</option>
+                        <option value=6>Paddy</option>
+                        <option value=7>Pulses</option>
+                        <option value=8>Sugarcane</option>
+                        <option value=9>Tobacco</option>
+                        <option value=10>Wheat</option>
+                    </select>
+                    <label for="floatingSelectCropType">Crop type</label>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="nitrogen" min="0" max="100" , name="nitro"
+                        placeholder="Nitrogen">
+                    <label for="nitrogen">Nitrogen</label>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="potassium" min="0" max="14" , name="pota" placeholder="Pottasium">
+                    <label for="potassium">Pottasium</label>
+                </div>
+
+            </div>
+
+            <div class="col-4">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="phosphorous" min="0" max="10000" , name="phos"
+                        placeholder="Phosphorous">
+                    <label for="phosphorous">Phosphorous</label>
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-center">
+
+                <button class="btn btn-primary w-50" type="submit" id="submit" name="submit">Recommend</button>
+
+            </div>
+
+
+
+
+        </div>
+    </form>
+
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+    <div class="container d-flex justify-content-between align-items-center" style="height: 100vh;">
+
+       <div class="d-flex flex-column align-items-center">
+            <h2>Crop Prediction  System</h2>
+            <a class="btn btn-primary" href="{{ url_for('crop') }}">Predict</a>
+        </div>
+
+        <div class="d-flex flex-column align-items-center">
+            <h2>Fertilizer Recommendation system</h2>
+            <a class="btn btn-primary" href="{{ url_for('fertilizer') }}">Recommend</a>
+        </div>
+
+    </div>
+    
+{% endblock body %} 
